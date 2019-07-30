@@ -17,8 +17,6 @@ defmodule TextClient.Interact do
       tally: Hangman.tally(game)
     }
 
-  defp new_game do
-    Node.connect(@hangman_server)
+  defp new_game, do:
     :rpc.call(@hangman_server, Hangman, :new_game, [])
-  end
 end
