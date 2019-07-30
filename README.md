@@ -1,21 +1,26 @@
 # TextClient
 
-**TODO: Add description**
+This is a text client for the Hangman application course provided by Dave Thomas,
+aka, PragDave.
 
-## Installation
+This is a terminal client to the Hangman server. You can have several text
+clients connected to the same server so multiple people can play at the same
+time.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `text_client` to your list of dependencies in `mix.exs`:
+# Usage
 
-```elixir
-def deps do
-  [
-    {:text_client, "~> 0.1.0"}
-  ]
-end
-```
+First create a hangman server on the local machine:
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/text_client](https://hexdocs.pm/text_client).
+`iex --sname hangman -S mix`
 
+Once the hangman server node is running, you can create as many clients as you
+want.
+
+`iex --sname client1 -S mix`
+
+Once in the client, create a game. The client will connect automatically to the
+server and start the game:
+
+`TextClient.start`
+
+Enjoy!
